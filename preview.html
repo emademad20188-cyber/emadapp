@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html  class="scroll-smooth">
+<head>
+    <meta charset="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Cal.com embed -->
+    <script type="text/javascript">
+      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+      Cal("init", "15min", {origin:"https://app.cal.com"});
+      Cal.ns["15min"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#BFA163"},"dark":{"cal-brand":"#111729"}},"hideEventTypeDetails":false,"layout":"month_view"});
+    </script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              navy: {
+                DEFAULT: '#0F172A',
+                light: '#1E293B',
+                dark: '#020617',
+              },
+              gold: {
+                DEFAULT: '#C5A059',
+                hover: '#C5A059',
+                light: '#C5A059',
+              },
+            },
+            fontFamily: {
+              inter: ['Inter', 'sans-serif'],
+              noto: ['Noto Sans SC', 'sans-serif'],
+              tajawal: ['Tajawal', 'sans-serif'],
+              playfair: ['"Playfair Display"', 'serif'],
+              amiri: ['Amiri', 'serif'],
+            },
+            animation: {
+              'fade-in-up': 'fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+              'fade-in-down': 'fadeInDown 1s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+              'fade-in': 'fadeIn 1.5s ease-out forwards',
+              'slow-zoom': 'slowZoom 20s ease-in-out infinite alternate',
+              'float': 'float 6s ease-in-out infinite',
+              'pulse-glow': 'pulseGlow 3s infinite',
+              'shimmer': 'shimmer 2s linear infinite',
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(40px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              fadeInDown: {
+                '0%': { opacity: '0', transform: 'translateY(-40px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              slowZoom: {
+                '0%': { transform: 'scale(1)' },
+                '100%': { transform: 'scale(1.15)' },
+              },
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-15px)' },
+              },
+              pulseGlow: {
+                '0%, 100%': { boxShadow: '0 0 0 0 rgba(197, 160, 89, 0.4)' },
+                '50%': { boxShadow: '0 0 25px 5px rgba(197, 160, 89, 0.2)' },
+              },
+              shimmer: {
+                '0%': { backgroundPosition: '-1000px 0' },
+                '100%': { backgroundPosition: '1000px 0' },
+              }
+            },
+            backgroundImage: {
+              'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+            }
+          },
+        },
+      }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=Tajawal:wght@400;500;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<link rel="stylesheet" href="style.css"></head>
+<body  data-lang="en">
+<!-- Anti-FOUC Blocking Script: Instantly applies saved language before the browser renders the page layout. -->
+<script>
+    (function() {
+        var savedLang = localStorage.getItem('binnagi_lang') || 'en';
+        document.documentElement.lang = savedLang;
+        document.documentElement.dir = (savedLang === 'ar') ? 'rtl' : 'ltr';
+        document.body.setAttribute('data-lang', savedLang);
+    })();
+</script>
+
+
+<!-- TopBar -->
+<div class="topbar">
+    <div class="container">
+        <div class="topbar-info" style="width: 100%; justify-content: center;">
+            <span style="display: flex; align-items: center; gap: 0.5rem;">
+                <i class="fas fa-envelope text-gold"></i>
+                <a href="mailto:info@binnagigroup.com" class="hover:text-gold">info@binnagigroup.com</a>
+            </span>
+            <span style="display: none; padding: 0 0.5rem; color: #64748b;" class="d-sm-inline">|</span>
+            <span style="display: flex; align-items: center; gap: 0.5rem;">
+                <i class="fas fa-phone-alt text-gold"></i>
+                <a href="tel:+8615915732732" dir="ltr" class="hover:text-gold">+86 159 1573 2732</a>
+            </span>
+        </div>
+    </div>
+</div>
+
+<!-- Navbar -->
+<nav id="navbar" class="navbar">
+    <div class="container navbar-container">
+        <!-- Logo -->
+        <a href="#home" class="logo group">
+            <img src="logo.png" alt="Bin Nagi Group Logo" class="logo-img">
+        </a>
+
+        <!-- Desktop Menu -->
+        <ul class="nav-menu">
+            <li><a href="#home" class="nav-link" data-section="home">
+                <span class="lang-content" data-lang="en">Home</span>
+                <span class="lang-content" data-lang="zh">首页</span>
+                <span class="lang-content" data-lang="ar">الرئيسية</span>
+            </a></li>
+            <li><a href="#about" class="nav-link" data-section="about">
+                <span class="lang-content" data-lang="en">About</span>
+                <span class="lang-content" data-lang="zh">关于我们</span>
+                <span class="lang-content" data-lang="ar">من نحن</span>
+            </a></li>
+            <li><a href="#services" class="nav-link" data-section="services">
+                <span class="lang-content" data-lang="en">Services</span>
+                <span class="lang-content" data-lang="zh">服务</span>
+                <span class="lang-content" data-lang="ar">خدماتنا</span>
+            </a></li>
+            <li><a href="#industries" class="nav-link" data-section="industries">
+                <span class="lang-content" data-lang="en">Industries</span>
+                <span class="lang-content" data-lang="zh">行业</span>
+                <span class="lang-content" data-lang="ar">القطاعات</span>
+            </a></li>
+            <li><a href="#partners" class="nav-link" data-section="partners">
+                <span class="lang-content" data-lang="en">Partners</span>
+                <span class="lang-content" data-lang="zh">合作伙伴</span>
+                <span class="lang-content" data-lang="ar">للشركاء</span>
+            </a></li>
+            <li><a href="#contact" class="nav-link" data-section="contact">
+                <span class="lang-content" data-lang="en">Contact</span>
+                <span class="lang-content" data-lang="zh">联系</span>
+                <span class="lang-content" data-lang="ar">اتصل بنا</span>
+            </a></li>
+        </ul>
+
+        <!-- Actions -->
+        <div class="nav-actions" style="display: flex; align-items: center; gap: 0.75rem;">
+            <div class="nav-lang">
+                <button data-set-lang="en" class="active">EN</button>
+                <button data-set-lang="zh">中文</button>
+                <button data-set-lang="ar" dir="rtl">عربي</button>
+            </div>
+            
+            <a href="#contact" class="btn-quote">
+                <span class="lang-content" data-lang="en">Get Quote</span>
+                <span class="lang-content" data-lang="zh">请求报价</span>
+                <span class="lang-content" data-lang="ar">طلب تسعيرة</span>
+            </a>
+            
+            <button id="mobile-toggle" class="mobile-toggle"><i class="fas fa-bars"></i></button>
+        </div>
+    </div>
+</nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="#home" class="mobile-link">
+            <span class="lang-content" data-lang="en">Home</span><span class="lang-content" data-lang="zh">首页</span><span class="lang-content" data-lang="ar">الرئيسية</span>
+        </a>
+        <a href="#about" class="mobile-link">
+            <span class="lang-content" data-lang="en">About</span><span class="lang-content" data-lang="zh">关于我们</span><span class="lang-content" data-lang="ar">من نحن</span>
+        </a>
+        <a href="#services" class="mobile-link">
+            <span class="lang-content" data-lang="en">Services</span><span class="lang-content" data-lang="zh">服务</span><span class="lang-content" data-lang="ar">خدماتنا</span>
+        </a>
+        <a href="#industries" class="mobile-link">
+            <span class="lang-content" data-lang="en">Industries</span><span class="lang-content" data-lang="zh">行业</span><span class="lang-content" data-lang="ar">القطاعات</span>
+        </a>
+        <a href="#partners" class="mobile-link">
+            <span class="lang-content" data-lang="en">Partners</span><span class="lang-content" data-lang="zh">合作伙伴</span><span class="lang-content" data-lang="ar">للشركاء</span>
+        </a>
+        <a href="#contact" class="mobile-link">
+            <span class="lang-content" data-lang="en">Contact</span><span class="lang-content" data-lang="zh">联系</span><span class="lang-content" data-lang="ar">اتصل بنا</span>
+        </a>
+        <a href="#contact" class="btn-quote-mobile">
+            <span class="lang-content" data-lang="en">Request Quote</span><span class="lang-content" data-lang="zh">请求报价</span><span class="lang-content" data-lang="ar">طلب عرض سعر</span>
+        </a>
+    </div>
+</nav>
+
+
+<main>
+    <!-- HERO SECTION -->
+    <section id="home" class="hero">
+        <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');"></div>
+        <div class="hero-overlay-1"></div>
+        <div class="hero-overlay-2"></div>
+
+        <div class="container hero-content">
+            <div class="badge animate-fade-in-up">
+                <div class="badge-line"></div>
+                <div class="badge-text">
+                    <span class="lang-content" data-lang="en">Since 2008</span>
+                    <span class="lang-content" data-lang="zh">始于 2008 年</span>
+                    <span class="lang-content" data-lang="ar">منذ عام 2008</span>
+                </div>
+            </div>
+
+            <h1 class="hero-title animate-fade-in-up delay-200">
+                <span class="lang-content" data-lang="en">Your Strategic Industrial Bridge Between <span class="text-gold">You & China</span></span>
+                <span class="lang-content" data-lang="zh">连接您与中国的<br /><span class="text-gold">战略工业桥梁</span></span>
+                <span class="lang-content" data-lang="ar">الجسر الصناعي الاستراتيجي بينك وبين <span class="text-gold">الصين</span></span>
+            </h1>
+
+            <p class="hero-desc animate-fade-in-up delay-400">
+                <span class="lang-content" data-lang="en">We provide end-to-end supply chain solutions, project management, and exclusive agency representation for major Chinese manufacturers in the Middle East.</span>
+                <span class="lang-content" data-lang="zh">作为中国大型制造商在中东的独家代理，我们提供端到端的供应链解决方案、项目管理以及强大的政府关系网络。</span>
+                <span class="lang-content" data-lang="ar">نقدم حلول سلاسل الإمداد المتكاملة، وإدارة المشاريع، والتمثيل التجاري الحصري لكبرى المصانع الصينية في الشرق الأوسط.</span>
+            </p>
+
+            <div class="hero-actions animate-fade-in-up delay-600">
+                <a href="#partners" class="btn-hero-primary">
+                    <span class="lang-content" data-lang="en">Become a Partner</span>
+                    <span class="lang-content" data-lang="zh">成为合作伙伴</span>
+                    <span class="lang-content" data-lang="ar">كن شريكاً لنا</span>
+                </a>
+                <a href="#services" class="btn-hero-secondary">
+                    <span class="lang-content" data-lang="en">Explore Services</span>
+                    <span class="lang-content" data-lang="zh">探索服务</span>
+                    <span class="lang-content" data-lang="ar">خدماتنا</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="scroll-indicator animate-float">
+            <a href="#about">
+                <span>Scroll</span>
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- TRUSTBAR SECTION -->
+    <div class="trustbar container scroll-animate">
+        <div class="trust-card">
+            <div class="trust-grid">
+                <div class="stat-item">
+                    <div class="stat-val">15+</div>
+                    <div class="stat-line"></div>
+                    <div class="stat-label">
+                        <span class="lang-content" data-lang="en">Years Experience</span>
+                        <span class="lang-content" data-lang="zh">年行业经验</span>
+                        <span class="lang-content" data-lang="ar">سنوات خبرة</span>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-val">500+</div>
+                    <div class="stat-line"></div>
+                    <div class="stat-label">
+                        <span class="lang-content" data-lang="en">Annual Containers</span>
+                        <span class="lang-content" data-lang="zh">年集装箱量</span>
+                        <span class="lang-content" data-lang="ar">حاوية سنوياً</span>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-val">50+</div>
+                    <div class="stat-line"></div>
+                    <div class="stat-label">
+                        <span class="lang-content" data-lang="en">Major Projects</span>
+                        <span class="lang-content" data-lang="zh">大型项目</span>
+                        <span class="lang-content" data-lang="ar">مشروع عملاق</span>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-val">3</div>
+                    <div class="stat-line"></div>
+                    <div class="stat-label">
+                        <span class="lang-content" data-lang="en">Global Offices</span>
+                        <span class="lang-content" data-lang="zh">全球办事处</span>
+                        <span class="lang-content" data-lang="ar">مكاتب دولية</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="section-py">
+        <div class="container about-grid">
+            <div class="about-img-wrapper order-last lg:order-first scroll-animate">
+                <div class="about-img-bg"></div>
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="HQ" class="about-img">
+                <div class="float-badge animate-float">
+                    <div style="font-size: 2.5rem; font-weight: 800; color: var(--color-gold); margin-bottom: 0.5rem; text-align: center;">#1</div>
+                    <div style="font-size: 0.875rem; font-weight: 700; line-height: 1.2; text-align: center;">
+                        <span class="lang-content" data-lang="en">Trusted Partner<br>in Yemen</span>
+                        <span class="lang-content" data-lang="zh">也门最受信赖<br>的合作伙伴</span>
+                        <span class="lang-content" data-lang="ar">الشريك الموثوق<br>في اليمن</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="order-first lg:order-last scroll-animate delay-200">
+                <div class="section-label">
+                    <span class="lang-content" data-lang="en">About Bin Nagi Group</span>
+                    <span class="lang-content" data-lang="zh">关于宾纳吉集团</span>
+                    <span class="lang-content" data-lang="ar">عن مجموعة بن ناجي</span>
+                </div>
+                <h2 class="section-title">
+                    <span class="lang-content" data-lang="en">Empowering Trade Through Infrastructure & Integrity</span>
+                    <span class="lang-content" data-lang="zh">以基础设施和诚信赋能贸易</span>
+                    <span class="lang-content" data-lang="ar">تمكين التجارة عبر البنية التحتية والمصداقية</span>
+                </h2>
+                
+                <div class="about-text">
+                    <div class="lang-content" data-lang="en">
+                        <p>Established in Guangzhou in 2008, Bin Nagi Group has evolved from a trading company into a multinational industrial conglomerate. We bridge the gap between China's manufacturing might and the developing infrastructure needs of Yemen and the GCC.</p>
+                        <p>Unlike simple brokers, we own our supply chain: from warehousing in China to customs clearance agents in Aden and distribution fleets in Sanaa.</p>
+                    </div>
+                    <div class="lang-content" data-lang="zh">
+                        <p>宾纳吉集团于2008年在广州成立，已从一家贸易公司发展成为一家跨国工业集团。我们连接了中国强大的制造能力与也门及海湾合作委员会国家日益增长的基础设施需求。</p>
+                        <p>与简单的中介不同，我们拥有自己的供应链：从中国的仓储到亚丁的清关代理，再到萨那的分销车队。</p>
+                    </div>
+                    <div class="lang-content" data-lang="ar">
+                        <p>تأسست مجموعة بن ناجي في قوانغتشو عام 2008، وتطورت من شركة تجارية إلى مجموعة صناعية متعددة الجنسيات. نحن نجسّر الفجوة بين قوة التصنيع الصينية واحتياجات البنية التحتية المتنامية في اليمن والخليج.</p>
+                        <p>على عكس الوسطاء التقليديين، نحن نمتلك سلسلة التوريد الخاصة بنا: من التخزين في الصين إلى وكلاء التخليص الجمركي في عدن وأساطيل التوزيع في صنعاء.</p>
+                    </div>
+                </div>
+
+                <ul class="feature-list">
+                    <li>
+                        <div class="feature-icon"><i class="fas fa-check"></i></div>
+                        <span class="lang-content" data-lang="en">Registered "Class A" Importer</span>
+                        <span class="lang-content" data-lang="zh">注册“A级”进口商资质</span>
+                        <span class="lang-content" data-lang="ar">مستورد مسجل "فئة أ"</span>
+                    </li>
+                    <li>
+                        <div class="feature-icon"><i class="fas fa-check"></i></div>
+                        <span class="lang-content" data-lang="en">Financial capabilities for L/C & bulk procurement</span>
+                        <span class="lang-content" data-lang="zh">具备信用证（L/C）和批量采购的资金实力</span>
+                        <span class="lang-content" data-lang="ar">قدرات مالية للاعتمادات البنكية والشراء بالجملة</span>
+                    </li>
+                    <li>
+                        <div class="feature-icon"><i class="fas fa-check"></i></div>
+                        <span class="lang-content" data-lang="en">Deep government & private sector relationships</span>
+                        <span class="lang-content" data-lang="zh">深厚的政府及私营部门关系网</span>
+                        <span class="lang-content" data-lang="ar">علاقات عميقة مع القطاعين الحكومي والخاص</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services" class="services-section section-py">
+        <div class="blob-1"></div>
+        <div class="blob-2"></div>
+        <div class="container relative z-10">
+            <div style="text-align: center; max-width: 48rem; margin: 0 auto 3rem auto;">
+                <span class="section-label" style="justify-content: center; display: block; border: none;">
+                    <span class="lang-content" data-lang="en">Our Expertise</span>
+                    <span class="lang-content" data-lang="zh">我们的专业服务</span>
+                    <span class="lang-content" data-lang="ar">خبراتنا</span>
+                </span>
+                <h2 class="section-title">
+                    <span class="lang-content" data-lang="en">Integrated Trade Solutions</span>
+                    <span class="lang-content" data-lang="zh">综合贸易解决方案</span>
+                    <span class="lang-content" data-lang="ar">حلول تجارية متكاملة</span>
+                </h2>
+            </div>
+
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card scroll-animate">
+                    <div class="service-icon"><i class="fas fa-search-dollar"></i></div>
+                    <h3 class="service-title">
+                        <span class="lang-content" data-lang="en">Strategic Sourcing</span>
+                        <span class="lang-content" data-lang="zh">战略采购</span>
+                        <span class="lang-content" data-lang="ar">التوريد الاستراتيجي</span>
+                    </h3>
+                    <p class="service-desc">
+                        <span class="lang-content" data-lang="en">Direct access to factories. We verify capabilities, negotiate volume pricing, and ensure quality control (QC) before shipment.</span>
+                        <span class="lang-content" data-lang="zh">直接对接工厂。我们在发货前核实生产能力、谈判批量价格并确保质量控制（QC）。</span>
+                        <span class="lang-content" data-lang="ar">وصول مباشر للمصانع. نتحقق من القدرات، ونتفاوض على أسعار الجملة، ونضمن مراقبة الجودة قبل الشحن.</span>
+                    </p>
+                </div>
+                <!-- Service 2 -->
+                <div class="service-card scroll-animate delay-100">
+                    <div class="service-icon"><i class="fas fa-ship"></i></div>
+                    <h3 class="service-title">
+                        <span class="lang-content" data-lang="en">Logistics & Shipping</span>
+                        <span class="lang-content" data-lang="zh">物流与运输</span>
+                        <span class="lang-content" data-lang="ar">الشحن واللوجستيات</span>
+                    </h3>
+                    <p class="service-desc">
+                        <span class="lang-content" data-lang="en">Sea and air freight consolidation from Guangzhou/Yiwu. We handle the complex documentation required for Yemen ports.</span>
+                        <span class="lang-content" data-lang="zh">广州/义乌的海运和空运集货服务。我们处理也门港口所需的复杂文件。</span>
+                        <span class="lang-content" data-lang="ar">تجميع الشحن البحري والجوي من قوانغتشو/إيوو. نتولى كافة الوثائق المعقدة المطلوبة للموانئ اليمنية.</span>
+                    </p>
+                </div>
+                <!-- Service 3 -->
+                <div class="service-card scroll-animate delay-200">
+                    <div class="service-icon"><i class="fas fa-file-signature"></i></div>
+                    <h3 class="service-title">
+                        <span class="lang-content" data-lang="en">Customs Clearance</span>
+                        <span class="lang-content" data-lang="zh">清关服务</span>
+                        <span class="lang-content" data-lang="ar">التخليص الجمركي</span>
+                    </h3>
+                    <p class="service-desc">
+                        <span class="lang-content" data-lang="en">Our local team in Aden and Hodeidah navigates regulations to ensure fast release of goods without demurrage.</span>
+                        <span class="lang-content" data-lang="zh">我们在亚丁和荷台达的本地团队熟悉法规，确保货物快速放行，避免滞港费。</span>
+                        <span class="lang-content" data-lang="ar">فريقنا المحلي في عدن والحديدة يتعامل مع اللوائح لضمان الإفراج السريع عن البضائع دون غرامات تأخير.</span>
+                    </p>
+                </div>
+                <!-- Service 4 -->
+                <div class="service-card scroll-animate delay-300">
+                    <div class="service-icon"><i class="fas fa-coins"></i></div>
+                    <h3 class="service-title">
+                        <span class="lang-content" data-lang="en">Financial Facilitation</span>
+                        <span class="lang-content" data-lang="zh">金融便利化</span>
+                        <span class="lang-content" data-lang="ar">التسهيلات المالية</span>
+                    </h3>
+                    <p class="service-desc">
+                        <span class="lang-content" data-lang="en">Secure payment channels. We facilitate TT transfers and Letters of Credit (L/C) between Yemen and China.</span>
+                        <span class="lang-content" data-lang="zh">安全的支付渠道。我们协助处理也门与中国之间的TT转账和信用证（L/C）业务。</span>
+                        <span class="lang-content" data-lang="ar">قنوات دفع آمنة. نسهل التحويلات البنكية والاعتمادات المستندية (L/C) بين اليمن والصين.</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INDUSTRIES SECTION -->
+    <section id="industries" class="section-py">
+        <div class="container">
+            <div style="margin-bottom: 3rem;">
+                <div class="section-label">
+                    <span class="lang-content" data-lang="en">Sectors</span>
+                    <span class="lang-content" data-lang="zh">行业领域</span>
+                    <span class="lang-content" data-lang="ar">القطاعات</span>
+                </div>
+                <h2 class="section-title">
+                    <span class="lang-content" data-lang="en">Key Industries We Serve</span>
+                    <span class="lang-content" data-lang="zh">我们要服务的关键行业</span>
+                    <span class="lang-content" data-lang="ar">القطاعات الرئيسية</span>
+                </h2>
+            </div>
+
+            <div class="industry-grid">
+                <!-- Item 1 -->
+                <a href="#contact" class="industry-card group scroll-animate">
+                    <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=2072&q=80" alt="Renewable Energy" class="industry-img">
+                    <div class="industry-overlay"></div>
+                    <div class="industry-content">
+                        <div class="industry-text-wrapper">
+                            <h3 class="industry-title">
+                                <span class="lang-content" data-lang="en">Renewable Energy</span>
+                                <span class="lang-content" data-lang="zh">可再生能源</span>
+                                <span class="lang-content" data-lang="ar">الطاقة المتجددة</span>
+                            </h3>
+                            <p class="industry-desc">
+                                <span class="lang-content" data-lang="en">Solar farms, inverters, and lithium storage solutions for Yemen's energy crisis.</span>
+                                <span class="lang-content" data-lang="zh">针对也门能源危机的太阳能电站、逆变器和锂电池存储方案。</span>
+                                <span class="lang-content" data-lang="ar">مزارع الطاقة الشمسية، والمحولات، وحلول تخزين الليثيوم لأزمة الطاقة.</span>
+                            </p>
+                            <div class="industry-more">
+                                <span class="lang-content" data-lang="en">Discover More</span>
+                                <span class="lang-content" data-lang="zh">了解更多</span>
+                                <span class="lang-content" data-lang="ar">اكتشف المزيد</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <!-- Item 2 -->
+                <a href="#contact" class="industry-card group scroll-animate">
+                    <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2053&q=80" alt="Medical Supplies" class="industry-img">
+                    <div class="industry-overlay"></div>
+                    <div class="industry-content">
+                        <div class="industry-text-wrapper">
+                            <h3 class="industry-title">
+                                <span class="lang-content" data-lang="en">Medical Supplies</span>
+                                <span class="lang-content" data-lang="zh">医疗物资</span>
+                                <span class="lang-content" data-lang="ar">التجهيزات الطبية</span>
+                            </h3>
+                            <p class="industry-desc">
+                                <span class="lang-content" data-lang="en">Supplying hospitals with ISO/CE certified diagnostic machinery and consumables.</span>
+                                <span class="lang-content" data-lang="zh">为医院供应通过ISO/CE认证的诊断设备和消耗品。</span>
+                                <span class="lang-content" data-lang="ar">تزويد المستشفيات بأجهزة التشخيص والمستهلكات المعتمدة عالمياً.</span>
+                            </p>
+                            <div class="industry-more">
+                                <span class="lang-content" data-lang="en">Discover More</span>
+                                <span class="lang-content" data-lang="zh">了解更多</span>
+                                <span class="lang-content" data-lang="ar">اكتشف المزيد</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <!-- Item 3 -->
+                <a href="#contact" class="industry-card group scroll-animate">
+                    <img src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1974&q=80" alt="Heavy Industry" class="industry-img">
+                    <div class="industry-overlay"></div>
+                    <div class="industry-content">
+                        <div class="industry-text-wrapper">
+                            <h3 class="industry-title">
+                                <span class="lang-content" data-lang="en">Heavy Industry</span>
+                                <span class="lang-content" data-lang="zh">重工业</span>
+                                <span class="lang-content" data-lang="ar">الصناعات الثقيلة</span>
+                            </h3>
+                            <p class="industry-desc">
+                                <span class="lang-content" data-lang="en">Production lines, raw materials, and construction machinery.</span>
+                                <span class="lang-content" data-lang="zh">生产线、原材料及建筑机械。</span>
+                                <span class="lang-content" data-lang="ar">خطوط الإنتاج، المواد الخام، وآليات البناء والتشييد.</span>
+                            </p>
+                            <div class="industry-more">
+                                <span class="lang-content" data-lang="en">Discover More</span>
+                                <span class="lang-content" data-lang="zh">了解更多</span>
+                                <span class="lang-content" data-lang="ar">اكتشف المزيد</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <!-- Item 4 -->
+                <a href="#contact" class="industry-card group scroll-animate">
+                    <img src="https://images.unsplash.com/photo-1550009158-9ebf69173e03?ixlib=rb-4.0.3&auto=format&fit=crop&w=2101&q=80" alt="Consumer Electronics" class="industry-img">
+                    <div class="industry-overlay"></div>
+                    <div class="industry-content">
+                        <div class="industry-text-wrapper">
+                            <h3 class="industry-title">
+                                <span class="lang-content" data-lang="en">Consumer Electronics</span>
+                                <span class="lang-content" data-lang="zh">消费电子</span>
+                                <span class="lang-content" data-lang="ar">الإلكترونيات</span>
+                            </h3>
+                            <p class="industry-desc">
+                                <span class="lang-content" data-lang="en">Wholesale distribution of phones, accessories, and home appliances.</span>
+                                <span class="lang-content" data-lang="zh">手机、配件及家用电器的批发分销。</span>
+                                <span class="lang-content" data-lang="ar">توزيع بالجملة للهواتف، الملحقات، والأجهزة المنزلية.</span>
+                            </p>
+                            <div class="industry-more">
+                                <span class="lang-content" data-lang="en">Discover More</span>
+                                <span class="lang-content" data-lang="zh">了解更多</span>
+                                <span class="lang-content" data-lang="ar">اكتشف المزيد</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PARTNERSHIP SECTION -->
+    <section id="partners" class="partnership-section section-py">
+        <div class="container partner-grid">
+            <div>
+                <div class="section-label" style="border: none; padding: 0;">
+                    <span class="lang-content" data-lang="en">For Manufacturers</span>
+                    <span class="lang-content" data-lang="zh">致制造商</span>
+                    <span class="lang-content" data-lang="ar">للمصانع والشركات</span>
+                </div>
+                <h2 class="section-title" style="color: var(--color-white);">
+                    <span class="lang-content" data-lang="en">Partner With Us for Market Dominance</span>
+                    <span class="lang-content" data-lang="zh">与我们合作，主导市场</span>
+                    <span class="lang-content" data-lang="ar">شاركنا للسيطرة على السوق</span>
+                </h2>
+                
+                <div style="color: var(--color-slate-300); margin-bottom: 2rem;">
+                    <p class="lang-content" data-lang="en">Are you a top-tier Chinese manufacturer looking to enter the Yemen and GCC market? Bin Nagi Group is your ideal exclusive agent.</p>
+                    <p class="lang-content" data-lang="zh">您是希望进入也门及海湾市场的中国顶级制造商吗？宾纳吉集团是您理想的独家代理。</p>
+                    <p class="lang-content" data-lang="ar">هل أنت مصنع عالمي يتطلع لدخول سوق اليمن والخليج؟ مجموعة بن ناجي هي وكيلك الحصري المثالي.</p>
+                </div>
+
+                <ul class="partner-features" style="color: var(--color-white);">
+                    <li>
+                        <div class="partner-icon"><i class="fas fa-check"></i></div>
+                        <span class="lang-content" data-lang="en"><strong>Zero Risk:</strong> We buy inventory upfront or secure via LC.</span>
+                        <span class="lang-content" data-lang="zh"><strong>零风险：</strong> 我们预付货款或通过信用证（LC）担保。</span>
+                        <span class="lang-content" data-lang="ar"><strong>انعدام المخاطر:</strong> نشتري المخزون مقدماً أو عبر اعتمادات بنكية.</span>
+                    </li>
+                    <li>
+                        <div class="partner-icon"><i class="fas fa-check"></i></div>
+                        <span class="lang-content" data-lang="en"><strong>Network:</strong> Access to 500+ wholesalers and government tenders.</span>
+                        <span class="lang-content" data-lang="zh"><strong>销售网络：</strong> 直接触达500+批发商及政府招标项目。</span>
+                        <span class="lang-content" data-lang="ar"><strong>شبكة التوزيع:</strong> وصول لأكثر من 500 تاجر جملة ومناقصات حكومية.</span>
+                    </li>
+                    <li>
+                        <div class="partner-icon"><i class="fas fa-check"></i></div>
+                        <span class="lang-content" data-lang="en"><strong>Brand Building:</strong> We handle local marketing and Arabic support.</span>
+                        <span class="lang-content" data-lang="zh"><strong>品牌建设：</strong> 我们负责本地营销和阿拉伯语售后支持。</span>
+                        <span class="lang-content" data-lang="ar"><strong>بناء العلامة التجارية:</strong> نتولى التسويق المحلي والدعم الفني.</span>
+                    </li>
+                </ul>
+
+                <a href="#contact" class="btn-partner">
+                    <span class="lang-content" data-lang="en">Apply for Partnership</span>
+                    <span class="lang-content" data-lang="zh">申请合作伙伴关系</span>
+                    <span class="lang-content" data-lang="ar">قدم طلب شراكة</span>
+                </a>
+            </div>
+
+            <div class="partners-box scroll-animate delay-200">
+                <h3 class="text-white font-bold mb-4" style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1rem;">
+                    <span class="lang-content" data-lang="en">Current Partners</span>
+                    <span class="lang-content" data-lang="zh">现有合作伙伴</span>
+                    <span class="lang-content" data-lang="ar">شركاؤنا الحاليون</span>
+                </h3>
+                <div class="partner-logos">
+                    <div class="partner-logo-item">company name 1</div>
+                    <div class="partner-logo-item">company name 2</div>
+                    <div class="partner-logo-item">company name 3</div>
+                    <div class="partner-logo-item">company name 4</div>
+                </div>
+                <p class="text-center mt-4 text-sm text-slate-400 italic">
+                    <span class="lang-content" data-lang="en">+ 20 more strategic partners globally</span>
+                    <span class="lang-content" data-lang="zh">+ 全球 20 多个战略合作伙伴</span>
+                    <span class="lang-content" data-lang="ar">+ أكثر من 20 شريك استراتيجي حول العالم</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section-py" style="background: var(--color-slate-50);">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h2 class="section-title">
+                    <span class="lang-content" data-lang="en">Contact Global Headquarters</span>
+                    <span class="lang-content" data-lang="zh">联系全球总部</span>
+                    <span class="lang-content" data-lang="ar">تواصل مع الإدارة العامة</span>
+                </h2>
+                <div style="width: 6rem; height: 4px; background: var(--color-gold); margin: 1rem auto; border-radius: 2px;"></div>
+            </div>
+
+            <div class="contact-wrapper">
+                <div class="contact-locations">
+                    <div class="contact-grid">
+                        <!-- China Office -->
+                <div class="contact-card scroll-animate">
+                    <div class="contact-header">
+                        <div class="contact-icon"><i class="fas fa-building"></i></div>
+                        <span class="lang-content" data-lang="en">China HQ</span>
+                        <span class="lang-content" data-lang="zh">中国总部</span>
+                        <span class="lang-content" data-lang="ar">مقر الصين</span>
+                    </div>
+                    <div class="contact-details">
+                        <p><strong>Guangzhou:</strong><br>
+                        City Key Tower, Li Gang Nan Wan,<br>
+                        Nan An Road, Liwan District.<br>
+                        广州市荔湾区南岸路城市钥匙大厦</p>
+                        <a href="tel:+8615915732732" class="contact-phone-link">
+                            <i class="fas fa-phone text-gold"></i> <span dir="ltr">+86 159 1573 2732</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Yemen Office -->
+                <div class="contact-card scroll-animate delay-100">
+                    <div class="contact-header">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <span class="lang-content" data-lang="en">Yemen Operations</span>
+                        <span class="lang-content" data-lang="zh">也门运营中心</span>
+                        <span class="lang-content" data-lang="ar">عمليات اليمن</span>
+                    </div>
+                    <div class="contact-details">
+                        <p><strong>Aden:</strong><br>
+                        Main Trade Center St,<br>
+                        Near Chamber of Commerce.<br>
+                        عدن - بجوار الغرفة التجارية</p>
+                        <a href="tel:+967774704070" class="contact-phone-link">
+                            <i class="fas fa-phone text-gold"></i> <span dir="ltr">+967 774 704 070</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- K.S.A Office -->
+                <div class="contact-card scroll-animate delay-200">
+                    <div class="contact-header">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <span class="lang-content" data-lang="en">K.S.A Operations</span>
+                        <span class="lang-content" data-lang="zh">沙特阿拉伯运营</span>
+                        <span class="lang-content" data-lang="ar">عمليات السعودية</span>
+                    </div>
+                    <div class="contact-details">
+                        <p><strong>Riyadh:</strong><br>
+                        Saudi Arabia<br>
+                        الرياض، المملكة العربية السعودية</p>
+                        <a href="tel:+966555622532" class="contact-phone-link">
+                            <i class="fas fa-phone text-gold"></i> <span dir="ltr">+966 555 622 532</span>
+                        </a>
+                    </div>
+                </div>
+
+                    </div>
+                </div>
+
+                <!-- Contact Form Container -->
+                <div class="contact-form-container">
+                    <div class="contact-form-card scroll-animate delay-300">
+                        <!-- Decorative Orbs -->
+                        <div class="form-orb-1"></div>
+                        <div class="form-orb-2"></div>
+                        
+                        <div class="form-content relative z-10">
+                            <h3 class="form-title">
+                                <span class="lang-content" data-lang="en">Quick Inquiry</span>
+                                <span class="lang-content" data-lang="zh">快速咨询</span>
+                                <span class="lang-content" data-lang="ar">استفسار سريع</span>
+                            </h3>
+
+                    <form id="contact-form" class="relative z-10">
+                        <div class="form-group">
+                            <input type="text" name="name" class="form-input" placeholder="Name / 姓名 / الاسم" required>
+                            <div class="form-line"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" class="form-input" placeholder="Email / 邮箱 / البريد" required>
+                            <div class="form-line"></div>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" rows="3" class="form-input" style="resize: none;" placeholder="Message / 留言 / الرسالة" required></textarea>
+                            <div class="form-line"></div>
+                        </div>
+                        <button type="submit" class="btn-submit">
+                            <span class="lang-content" data-lang="en">Send Message</span>
+                            <span class="lang-content" data-lang="zh">发送信息</span>
+                                <span class="lang-content" data-lang="ar">إرسال الرسالة</span>
+                            </button>
+                        </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Brand -->
+                <div style="grid-column: span 1;">
+                    <div class="text-white font-extrabold text-2xl mb-4">BIN NAGI GROUP</div>
+                    <p class="mb-6" style="line-height: 1.6;">
+                        <span class="lang-content" data-lang="en">Connecting Markets. Delivering Value. Building Trust since 2008.</span>
+                        <span class="lang-content" data-lang="zh">连接市场。传递价值。始于2008年的信任。</span>
+                        <span class="lang-content" data-lang="ar">نربط الأسواق. نقدم القيمة. نبني الثقة منذ 2008.</span>
+                    </p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.facebook.com/p/%D9%85%D8%AC%D9%85%D9%88%D8%B9%D8%A9-%D8%A8%D9%86-%D9%86%D8%A7%D8%AC%D9%8A-%D8%A7%D9%84%D8%AA%D8%AC%D8%A7%D8%B1%D9%8A%D8%A9-100077694007043/" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <!-- Divisions -->
+                <div>
+                    <h4 class="footer-title">
+                        <span class="lang-content" data-lang="en">Divisions</span>
+                        <span class="lang-content" data-lang="zh">部门</span>
+                        <span class="lang-content" data-lang="ar">الأقسام</span>
+                    </h4>
+                    <ul class="footer-links">
+                        <li><a href="#industries">Solar Energy</a></li>
+                        <li><a href="#industries">Medical Equipment</a></li>
+                        <li><a href="#industries">Building Materials</a></li>
+                        <li><a href="#services">Logistics</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company -->
+                <div>
+                    <h4 class="footer-title">
+                        <span class="lang-content" data-lang="en">Company</span>
+                        <span class="lang-content" data-lang="zh">公司</span>
+                        <span class="lang-content" data-lang="ar">الشركة</span>
+                    </h4>
+                    <ul class="footer-links">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#partners">Partnership</a></li>
+                        <li><a href="#contact">Careers</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <!-- WeChat -->
+                <div>
+                    <h4 class="footer-title">WeChat / 微信</h4>
+                    <button id="open-wechat-footer" class="footer-wechat-btn">
+                        <i class="fab fa-weixin"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div style="text-align: center; font-size: 0.875rem; color: var(--color-slate-500);">
+                &copy;  Bin Nagi Group. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <div class="floating-btns">
+        <a href="https://wa.me/8615915732732" target="_blank" class="float-btn btn-whatsapp">
+            <span class="ping-ring"></span>
+            <i class="fab fa-whatsapp" style="position: relative; z-index: 10;"></i>
+        </a>
+        <button id="open-wechat-float" class="float-btn btn-wechat">
+            <span class="ping-ring" style="background: rgba(7, 193, 96, 0.3);"></span>
+            <i class="fab fa-weixin" style="position: relative; z-index: 10;"></i>
+        </button>
+    </div>
+
+    <!-- WeChat Modal -->
+    <div id="wechat-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button id="close-wechat" class="close-modal"><i class="fas fa-times"></i></button>
+            <h3 class="text-navy font-bold text-xl mb-2">
+                <span class="lang-content" data-lang="en">Scan via WeChat</span>
+                <span class="lang-content" data-lang="zh">微信扫一扫</span>
+                <span class="lang-content" data-lang="ar">امسح الرمز عبر WeChat</span>
+            </h3>
+            <p class="text-slate-500 text-sm mb-6">
+                <span class="lang-content" data-lang="en">Connect with our support team instantly.</span>
+                <span class="lang-content" data-lang="zh">即刻联系我们的支持团队。</span>
+                <span class="lang-content" data-lang="ar">تواصل مع فريق الدعم فوراً.</span>
+            </p>
+            <div style="background: #f1f5f9; padding: 1rem; border-radius: 0.5rem; display: inline-block; margin-bottom: 1rem; border: 1px solid #e2e8f0;">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://binnagigroup.com/contact" alt="QR Code" style="width: 12rem; height: 12rem; mix-blend-mode: multiply;">
+            </div>
+            <p class="text-slate-400 text-xs">ID: bin-nagi-support</p>
+        </div>
+    </div>
+
+    <!-- Custom Native Cal.com Floating Button -->
+    <button class="custom-cal-btn" data-cal-namespace="15min" data-cal-link="emadaddin-rassam-kmc1zx/15min" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>
+        <i class="fas fa-calendar-alt"></i>
+        <span class="lang-content" data-lang="en">Book a Call</span>
+        <span class="lang-content" data-lang="zh">预约会议</span>
+        <span class="lang-content" data-lang="ar">احجز اجتماعاً</span>
+    </button>
+
+    
+    
+    <!-- Inline scripts for logic that would normally be in assets/js/main.js, placed here for portability in this output format -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // --- Language Switcher ---
+        const langButtons = document.querySelectorAll('[data-set-lang]');
+        
+        function setLanguage(lang, isInitialLoad = false) {
+            const currentLang = document.body.getAttribute('data-lang');
+            if (currentLang === lang && !isInitialLoad) return;
+            
+            const applyLanguage = () => {
+                document.body.classList.add('no-transitions');
+                document.body.setAttribute('data-lang', lang);
+                localStorage.setItem('binnagi_lang', lang);
+                
+                langButtons.forEach(btn => {
+                    if(btn.getAttribute('data-set-lang') === lang) {
+                        btn.classList.add('active');
+                    } else {
+                        btn.classList.remove('active');
+                    }
+                });
+
+                if(lang === 'ar') {
+                    document.documentElement.dir = 'rtl';
+                } else {
+                    document.documentElement.dir = 'ltr';
+                }
+                document.documentElement.lang = lang;
+                
+                void document.body.offsetHeight; // Force reflow
+                document.body.classList.remove('no-transitions');
+            };
+
+            if (isInitialLoad) {
+                applyLanguage();
+            } else {
+                // Smooth Fade Out
+                document.body.style.opacity = '0';
+                setTimeout(() => {
+                    applyLanguage();
+                    
+                    // Replay scroll animations for the new layout
+                    document.querySelectorAll('.scroll-animate').forEach(el => {
+                        el.classList.remove('is-visible');
+                        if (typeof observer !== 'undefined') {
+                            observer.observe(el);
+                        }
+                    });
+
+                    // Fade back in smoothly
+                    requestAnimationFrame(() => {
+                        document.body.style.opacity = '1';
+                    });
+                }, 150); // wait for CSS transition to finish
+            }
+        }
+
+        // Load saved language
+        const savedLang = localStorage.getItem('binnagi_lang') || 'en';
+        setLanguage(savedLang, true);
+
+        langButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const lang = btn.getAttribute('data-set-lang');
+                setLanguage(lang, false);
+            });
+        });
+
+        // --- Mobile Menu ---
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link, .btn-quote-mobile');
+
+        mobileToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+            const icon = mobileToggle.querySelector('i');
+            if(mobileMenu.classList.contains('open')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                mobileToggle.querySelector('i').classList.remove('fa-times');
+                mobileToggle.querySelector('i').classList.add('fa-bars');
+            });
+        });
+
+        // --- Sticky Navbar & Scroll Spy ---
+        const navbar = document.getElementById('navbar');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('section, .trustbar'); // Trustbar treated as section for offset
+
+        window.addEventListener('scroll', () => {
+            // Sticky Nav style
+            if(window.scrollY > 20) {
+                navbar.classList.add('glass-nav');
+            } else {
+                navbar.classList.remove('glass-nav');
+            }
+
+            // Scroll Spy
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if(window.scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if(link.getAttribute('data-section') === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // --- WeChat Modal ---
+        const modal = document.getElementById('wechat-modal');
+        const openBtns = [document.getElementById('open-wechat-float'), document.getElementById('open-wechat-footer')];
+        const closeBtn = document.getElementById('close-wechat');
+
+        openBtns.forEach(btn => {
+            if(btn) {
+                btn.addEventListener('click', () => {
+                    modal.classList.add('open');
+                });
+            }
+        });
+
+        if(closeBtn) {
+            closeBtn.addEventListener('click', () => {
+                modal.classList.remove('open');
+            });
+        }
+
+        modal.addEventListener('click', (e) => {
+            if(e.target === modal) {
+                modal.classList.remove('open');
+            }
+        });
+
+        // --- Contact Form Mock ---
+        const form = document.getElementById('contact-form');
+        if(form) {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const btn = form.querySelector('button');
+                const originalText = btn.innerHTML;
+                
+                // Simulate loading
+                btn.disabled = true;
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+
+                setTimeout(() => {
+                    btn.style.background = '#22c55e'; // Green
+                    btn.style.color = 'white';
+                    btn.innerHTML = '<i class="fas fa-check"></i> Sent!';
+                    form.reset();
+
+                    setTimeout(() => {
+                        btn.disabled = false;
+                        btn.style.background = ''; // Revert to CSS
+                        btn.style.color = '';
+                        btn.innerHTML = originalText;
+                    }, 3000);
+                }, 1500);
+            });
+        }
+
+        // --- Scroll Animations ---
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-animate').forEach((el) => {
+            observer.observe(el);
+        });
+    });
+    </script>
+</body>
+</html>
